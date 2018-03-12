@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="FirefoxTest(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="FireToken.firetoken_SignUp">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="Signup"/>
+        </methods>
+      </class> <!-- FireToken.firetoken_SignUp -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+  <test thread-count="5" name="ChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="FireToken.firetoken_SignUp">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="Signup"/>
+        </methods>
+      </class> <!-- FireToken.firetoken_SignUp -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
