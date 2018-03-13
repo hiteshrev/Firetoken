@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="upbeatProject">
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="TestNG.libraryclasspath">
+        <pathelement location="E:/hitesh/eclipse/plugins/org.testng_6.14.2.r201802161450.jar"/>
+        <pathelement location="E:/hitesh/eclipse/plugins/com.beust.jcommander_1.72.0.jar"/>
+        <pathelement location="E:/hitesh/eclipse/plugins/org.apache-extras.beanshell.bsh_2.0.0.b6.jar"/>
+        <pathelement location="E:/hitesh/eclipse/plugins/org.yaml.snakeyaml_1.17.0.jar"/>
+    </path>
+    <path id="upbeatProject.classpath">
+        <pathelement location="bin"/>
+        <path refid="TestNG.libraryclasspath"/>
+        <pathelement location="D:/Appium Softwares/Selenium/client-combined-3.8.1.jar"/>
+        <pathelement location="D:/Appium Softwares/Selenium/client-combined-3.8.1-sources.jar"/>
+        <pathelement location="D:/Appium Softwares/Selenium/selenium-server-standalone-3.8.1.jar"/>
+        <pathelement location="D:/Appium Softwares/Selenium/libs/byte-buddy-1.7.5.jar"/>
+        <pathelement location="D:/Appium Softwares/Selenium/libs/commons-codec-1.10.jar"/>
+        <pathelement location="D:/Appium Softwares/Selenium/libs/commons-exec-1.3.jar"/>
+        <pathelement location="D:/Appium Softwares/Selenium/libs/commons-logging-1.2.jar"/>
+        <pathelement location="D:/Appium Softwares/Selenium/libs/gson-2.8.2.jar"/>
+        <pathelement location="D:/Appium Softwares/Selenium/libs/guava-23.0.jar"/>
+        <pathelement location="D:/Appium Softwares/Selenium/libs/httpclient-4.5.3.jar"/>
+        <pathelement location="D:/Appium Softwares/Selenium/libs/httpcore-4.4.6.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir=".">
+                <exclude name="**/*.java"/>
+                <exclude name="src/"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <src path="."/>
+            <exclude name="src/"/>
+            <classpath refid="upbeatProject.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="AddMeal (1)">
+        <java classname="upbeatProject.AddMeal" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="AdminLogin">
+        <java classname="AdminLogin" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="Check_Duplicate">
+        <java classname="upbeatProject.Check_Duplicate" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="DeleteMeal">
+        <java classname="upbeatProject.DeleteMeal" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="EditIngredients (1)">
+        <java classname="upbeatProject.EditIngredients" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="EditMealPlan">
+        <java classname="upbeatProject.EditMealPlan" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="EditSkills">
+        <java classname="upbeatProject.EditSkills" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="EquipmentEdit">
+        <java classname="upbeatProject.EquipmentEdit" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="FacebookScreenshots (1)">
+        <java classname="CaptureScreenshots.FacebookScreenshots" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="FileDownloader">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="FileDownloader" todir="${junit.output.dir}"/>
+            <classpath refid="upbeatProject.classpath"/>
+        </junit>
+    </target>
+    <target name="firetoken_login (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="FireToken.firetoken_login" todir="${junit.output.dir}"/>
+            <classpath refid="upbeatProject.classpath"/>
+        </junit>
+    </target>
+    <target name="firetoken_login (2)">
+        <java classname="FireToken.firetoken_login" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="Giftbox">
+        <java classname="CaptureScreenshots.Giftbox" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="OnlineExams">
+        <java classname="OnlineExams" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="OperatorExample">
+        <java classname="OperatorExample" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="rcdemo">
+        <java classname="rcdemo" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="SignupByEmailID">
+        <java classname="upbeatProject.SignupByEmailID" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="SignUpByFacebook (1)">
+        <java classname="upbeatProject.SignUpByFacebook" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="test">
+        <java classname="CaptureScreenshots.test" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="testclass">
+        <java classname="testclass" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="TrelloTest_Mozila (1)">
+        <java classname="TrelloProject.TrelloTest_Mozila" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="Trello_Login (1)">
+        <java classname="TrelloProject.Trello_Login" failonerror="true" fork="yes">
+            <classpath refid="upbeatProject.classpath"/>
+        </java>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>
